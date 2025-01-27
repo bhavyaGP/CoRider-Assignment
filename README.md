@@ -162,4 +162,8 @@ werkzeug==2.0.1
     }
     ```
 - **Delete User**: Create a new DELETE request to `http://localhost:3002/user/<user-id>`
-```
+```json
+    {
+       "message": "User deleted successfully" 
+    }
+    ```
