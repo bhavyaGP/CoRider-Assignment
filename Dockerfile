@@ -1,8 +1,13 @@
 FROM python:3.11
-WORKDIR /app
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
-COPY . .
-EXPOSE 3002
-CMD ["python", "app.py"]
 
+WORKDIR /app
+
+COPY . /app
+
+RUN pip3 install -r requirements.txt
+
+EXPOSE 3002
+
+#ENV NAME venv
+
+CMD ["python", "app.py"]

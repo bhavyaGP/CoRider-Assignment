@@ -21,8 +21,8 @@ A RESTful API built with Flask and MongoDB for managing user resources. This API
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd <project-directory>
+git clone https://github.com/bhavyagp/CORIDER-ASSIGNMENT
+cd CORIDER-ASSIGNMENT
 ```
 
 2. Create and activate a virtual environment:
