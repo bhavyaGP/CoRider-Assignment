@@ -1,13 +1,14 @@
+
 FROM python:3.11
 
 WORKDIR /app
 
 COPY . /app
 
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
+
+ENV FLASK_APP=app.py
 
 EXPOSE 3002
-
-#ENV NAME venv
 
 CMD ["python", "app.py"]

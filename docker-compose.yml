@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: flask_app
+    ports:
+      - "3003:3002" 
+    volumes:
+      - .:/app 
+    depends_on:
+      - db
+    environment:
+      - MONGODB_URL=mongodb://root:keyboardcat@test_mongodb:27017
+      - MONG_DB_NAME=user_database
+      - MONGO_COLLECTION=users
+
+  db:
+    image: mongo:latest
+    container_name: test_mongodb
+    hostname: test_mongodb
+    environment:
+      - MONGO_INITDB_DATABASE=user_database
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=keyboardcat
+    ports:
+      - 27017:27017
